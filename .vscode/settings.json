@@ -1,0 +1,11 @@
+{
+  "eslint.workingDirectories": ["./frontend", "./api"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "references.preferredLocation": "peek"
+}

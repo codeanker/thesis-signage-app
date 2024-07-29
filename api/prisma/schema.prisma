@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// Configurations
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum DeliveryType {
+  CSR
+  SSR
+}
+
+// Data model definitions
+
+model Device {
+  id           Int          @id @default(autoincrement())
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  deliveryType DeliveryType
+  playlistId   Int?
+  playlist     Playlist?    @relation(fields: [playlistId], references: [id])
+}
+
+model Playlist {
+  id                 Int      @id @default(autoincrement())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  name               String
+  devices            Device[]
+  widgets            Widget[]
+}
+
+model Widget {
+  id                Int        @id @default(autoincrement())
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  packageIdentifier String
+  options           Json?
+  playlists         Playlist[]
+}

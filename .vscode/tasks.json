@@ -1,0 +1,80 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start:frontend",
+			"label": "start:frontend",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+				"group": "apps",
+				"close": false
+			},
+			"options": {
+				"statusbar": {
+					"hide" : true
+				}
+			}
+		},
+    {
+			"type": "npm",
+			"script": "start:api",
+			"label": "start:api",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+				"group": "apps",
+				"close": false
+			},
+			"options": {
+				"statusbar": {
+					"hide" : true
+				}
+			}
+		},
+    {
+			"type": "npm",
+			"script": "start:services",
+			"label": "start:services",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+				"group": "services",
+				"close": false
+			},
+			"options": {
+				"statusbar": {
+					"hide" : true
+				}
+			}
+		},
+		{
+			"label": "start:apps and services",
+			"dependsOn": [
+				"start:api",
+				"start:frontend",
+				"start:services"
+			],
+			"problemMatcher": [],
+		},
+		{
+			"label": "start:prisma studio",
+			"type": "shell",
+			"command": "npx prisma studio",
+			"options": {
+        "cwd": "${workspaceFolder}/api"
+      },
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "silent",
+				"revealProblems": "onProblem",
+				"panel": "new",
+				"close": true
+			}
+		},
+	]
+}

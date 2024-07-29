@@ -1,0 +1,11 @@
+{
+  "name": "@thesis-signage-app/website-widget",
+  "type": "module",
+  "main": "src/component.class.ts",
+  "dependencies": {
+    "vue": "^3.4.28"
+  },
+  "devDependencies": {
+    "vue-tsc": "^2.0.21"
+  }
+}

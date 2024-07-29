@@ -1,0 +1,5 @@
+{
+  "name": "@thesis-signage-app/helpers",
+  "type": "module",
+  "main": "src/index.ts"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "thesis-signage-app",
+  "version": "1.0.0",
+  "description": "Prototype project for testing content delivery strategies of digital signage applications.",
+  "workspaces": [
+    "api",
+    "frontend",
+    "packages/*"
+  ],
+  "author": "Lukas Hauenstein (lukas.hauenstein@codeanker.de)",
+  "scripts": {
+    "start:api": "npm run -w api start",
+    "start:frontend": "npm run -w frontend dev",
+    "start:services": "docker compose -f docker-compose-services.yml up --build",
+    "lint": "eslint \"**/*.{vue,ts,js}\"",
+    "lint:fix": "eslint \"**/*.{vue,ts,js}\" --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.26.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.4",
+    "typescript": "^5.4.5"
+  }
+}

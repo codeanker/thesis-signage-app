@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+
+    /* Bundler mode */
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.vue"],
+  "vueCompilerOptions": {
+    "target": 3
+  }
+}
